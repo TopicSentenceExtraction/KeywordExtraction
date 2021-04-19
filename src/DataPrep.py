@@ -53,7 +53,7 @@ def export_metadata(metadata):
     arxiv_metadata_dataset.to_csv(
         'data/arxiv_metadata_dataset.csv')  # dataset contains all the titles and abstracts of papers
     arxiv_metadata_sample_dataset.to_csv(
-        'data/arxiv_metadata_sample_dataset.csv')  # sample dataset, contains 10% of the original dataset
+        'data/arxiv_metadata_sample_dataset.csv')  # sample dataset, contains 1% of the original dataset
 
 
 def main():
