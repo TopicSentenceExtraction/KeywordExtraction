@@ -1,10 +1,10 @@
 import json
 import pandas as pd
 from rake_nltk import Rake
-
+import os
 
 def get_metadata():
-    with open('data/arxiv-metadata-oai-snapshot.json') as f:
+    with open('src/data/arxiv-metadata-oai-snapshot.json') as f:
         for line in f:
             yield line
 
@@ -50,11 +50,11 @@ def export_metadata(metadata):
 
     arxiv_metadata_dataset = pd.DataFrame(d)
     arxiv_metadata_sample_dataset = arxiv_metadata_dataset.sample(frac=0.01, random_state=1)
-    arxiv_metadata_dataset.to_csv(
-        'data/arxiv_metadata_dataset.csv')  # dataset contains all the titles and abstracts of papers
-    arxiv_metadata_sample_dataset.to_csv(
-        'data/arxiv_metadata_sample_dataset.csv')  # sample dataset, contains 1% of the original dataset
-
+    # arxiv_metadata_dataset.to_csv(
+    #     'src/data/arxiv_metadata_dataset.csv')  # dataset contains all the titles and abstracts of papers
+    # arxiv_metadata_sample_dataset.to_csv(
+    #     'src/data/arxiv_metadata_sample_dataset.csv')  # sample dataset, contains 1% of the original dataset
+    print(arxiv_metadata_sample_dataset)
 
 def main():
     metadata = get_metadata()
